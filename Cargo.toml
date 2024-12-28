@@ -1,0 +1,17 @@
+[package]
+name = "gemini-dc-bot"
+description = "A simple Discord bot written in rust that uses the Gemini AI API to generate responses to user messages."
+version = "0.1.0"
+authors = ["dxmz"]
+license = "AGPL-3.0"
+repository = "https://github.com/davidxmz/gemini-dc-bot"
+homepage = "https://github.com/davidxmz/gemini-dc-bot"
+readme = "README.md"
+keywords = ["rust", "discord-bot", "gemini", "gemini-api", "gemini-ai"]
+edition = "2021"
+
+[dependencies]
+serenity = "0.12.4"
+tokio = { version = "1.42.0", features = ["macros", "rt-multi-thread"] }
+gemini-ai = "0.1.1672"
+dotenvy = "0.15.7"
