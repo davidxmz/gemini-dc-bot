@@ -95,9 +95,11 @@ impl EventHandler for Handler {
 // Main function for the Discord bot.
 #[tokio::main]
 async fn main() {
+    // Get the current working directory.
+    let workdir: std::path::PathBuf = std::env::current_dir().unwrap();
 
     // Try to load the .env file and exit if it fails.
-    if let Err(err) = dotenvy::dotenv() {
+    if let Err(err) = dotenvy::from_path(workdir.join(".env")) {
         println!("Failed to load .env file: {}", err);
         std::process::exit(1);
     }
